@@ -1,28 +1,30 @@
 import mongoose from 'mongoose'
+import {
+    v4 as uuid
+} from 'uuid';
 
 const User = mongoose.model("users", mongoose.Schema({
-    name: {
-        type: "String",
-        required: true,
+    cookie: {
+        type: String,
     },
-    email: {
-        type: "String",
-        trim: true,
-        required: true,
-    },
-    password: {
-        type: "String",
-        required: true,
-        // select: false,
-    },
-    token_info: {
-        type: "String",
-        required: false,
-        // select: false,
-    }
-}, { timestamps: true }))
+}, {
+    timestamps: true
+}))
 User.getList = async (where, paging) => {
     let data = await User.find();
     return data
 }
+
+User.getUuid = async () => {
+    let uId = uuid();
+    let where = {
+        uuid: uId || ""
+    }
+    let data = await User.findOne(where);
+    if (data) {
+        return User.getUuid();
+    }
+    return uId
+}
+
 export default User

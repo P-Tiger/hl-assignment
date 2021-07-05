@@ -1,11 +1,13 @@
 
 import DB from './db';
 import User from './user';
-import Chat from './chat';
+import UserStory from './user_story';
+import Story from './story';
 
 
 export {
 	DB,
 	User,
-	Chat
+	UserStory,
+	Story
 }
