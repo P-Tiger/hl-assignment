@@ -11,10 +11,19 @@ When there is no more jokes to show, the app will display a `"That's all the jok
 
 ### Requirements
 
-First, we need to install the dependencies
+- Node version 8 or hight
+- Terminal Bash or shell
 
 ```shell
 Step 1: cd hl-assignment
 Step 2: npm install or yarn
-step 3: npm start or yarn start
+step 3: run shell run.sh (bash run.sh or ./run.sh)
+```
+
+> **_NOTE_**
+> How to fix "permission denied" by shell:
+> Terminal, you copy
+
+```Shell
+sudo chmod +x run.sh
 ```

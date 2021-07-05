@@ -1,8 +1,8 @@
 {
-  "name": "chat-mongo",
+  "name": "hl-assignment",
   "version": "1.0.0",
   "main": "src/index.js",
-  "repository": "https://github.com/P-Tiger/chat-mongo.git",
+  "repository": "https://github.com/P-Tiger/hl-assignment.git",
   "author": "Phi Ho <thivvnlh@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -31,6 +31,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.29.1",
     "mongoose": "^5.12.4",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "uuid": "^8.3.2"
   }
 }
