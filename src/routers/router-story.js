@@ -1,5 +1,6 @@
 import express from 'express';
 import _ from 'lodash';
+import moment from 'moment';
 import {
     User,
     UserStory,
@@ -36,7 +37,11 @@ router.get('/', async (req, res, next) => {
             });
         }
         let userStory = await UserStory.find({
-            user: checkUser._id
+            user: checkUser._id,
+            createdAt: {
+                $gt: moment().startOf('d').format('YYYY-MM-DD HH:mm:ss'),
+                $lt: moment().endOf('d').format('YYYY-MM-DD HH:mm:ss')
+            }
         })
         let stories = _.map(userStory, "story")
         where._id = {
